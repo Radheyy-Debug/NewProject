@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-maroon: #641f24;
+    --color-maroon-dark: #3f1013;
+    --color-burnt-orange: #c65a2e;
+    --color-sunset-orange: #e9823a;
+    --color-desert-gold: #d89b45;
+    --color-cream: #fff4dc;
+    --color-cream-light: #fefaf0;
+    --color-sand: #e8c894;
+    --color-sand-light: #f5e6ce;
+    --color-dark-brown: #542d20;
+    --color-emerald: #17634b;
+    --color-royal-blue: #173b63;
+    --color-gold: #c99a3e;
+    --color-gold-light: #ecc880;
+    --color-gold-dark: #8c671b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background-color: #200508;
+    color: #3e2015;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent touch delay & layout shifts */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Custom Font utilities */
+.font-cinzel-decorative {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-rozha {
+  font-family: 'Rozha One', serif;
+}
+
+.font-yatra {
+  font-family: 'Yatra One', 'Rozha One', cursive;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-marcellus {
+  font-family: 'Marcellus', serif;
+}
+
+/* Fluid responsive typography classes */
+.fluid-hero-name {
+  font-size: clamp(2.4rem, 8vw, 5.8rem);
+  line-height: 1.08;
+}
+
+.fluid-section-title {
+  font-size: clamp(1.85rem, 5vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.fluid-event-title {
+  font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+  line-height: 1.2;
+}
+
+/* Gold & Sunset Text Gradients */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #ffe5a3 0%, #e5b358 35%, #c99a3e 65%, #9b6e1e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-text-light {
+  background: linear-gradient(135deg, #fff7db 0%, #f7d287 40%, #dfa843 80%, #b88126 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sunset-text-gradient {
+  background: linear-gradient(135deg, #fff0db 0%, #fca468 40%, #e9823a 70%, #c65a2e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Royal Parchment Texture */
+.bg-parchment {
+  background-color: #fdf6e7;
+  background-image: radial-gradient(#d89b45 0.75px, transparent 0.75px), radial-gradient(#e8c894 0.75px, #fdf6e7 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* GPU-friendly Floating Lamp Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Royal Wax Seal button */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #b22e37, #641f24 70%, #3a0d10);
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.3), inset -2px -2px 5px rgba(0, 0, 0, 0.6), 0 8px 18px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.wax-seal:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: inset 2px 2px 6px rgba(255, 255, 255, 0.4), inset -2px -2px 6px rgba(0, 0, 0, 0.7), 0 12px 25px rgba(100, 31, 36, 0.6);
+}
+
+.wax-seal:active {
+  transform: scale(0.97);
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #200508;
+}
+::-webkit-scrollbar-thumb {
+  background: #c99a3e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e9823a;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
